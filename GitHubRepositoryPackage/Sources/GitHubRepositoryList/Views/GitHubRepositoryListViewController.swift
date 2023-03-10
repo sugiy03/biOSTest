@@ -74,6 +74,13 @@ final class GitHubRepositoryListViewController: UIViewController {
         super.viewDidLoad()
         title = Localize.GitHubRepositoryList.title
         setUpObservers()
+
+        #if DEBUG
+        if ProcessInfo.processInfo.isUITest {
+            setUpForTest()
+            viewModel.searchAction = .enterSearch(keywords: ["swift"])
+        }
+        #endif
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -130,6 +137,10 @@ final class GitHubRepositoryListViewController: UIViewController {
             }
             .store(in: &cancellableSet)
     }
+
+    private func setUpForTest() {
+        repositoryListTableView.accessibilityIdentifier = GitHubRepositoryListTestIdentifier.tableView.rawValue
+    }
 }
 
 extension GitHubRepositoryListViewController: UITableViewDelegate {
@@ -172,3 +183,4 @@ extension GitHubRepositoryListViewController: UISearchBarDelegate {
         viewModel.searchAction = .enterSearch(keywords: [word])
     }
 }
+

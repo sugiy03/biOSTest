@@ -93,6 +93,11 @@ final class GitHubRepositoryDetailViewController: UIViewController {
             guard let self else { return }
             self.eventNotificationSubject.send(.didTapRepositoryWebPageButton(url: self.viewModel.model.owner.htmlUrl))
         }), for: .touchUpInside)
+        #if DEBUG
+        if ProcessInfo.processInfo.isUITest {
+            setUpForTest()
+        }
+        #endif
     }
 
     private func setData(model: GitHubRepositoryItemModel) {
@@ -115,4 +120,17 @@ final class GitHubRepositoryDetailViewController: UIViewController {
         let avatarImageType = model.owner.avatarImageType
         avatarImageView.setImageType(imageType: avatarImageType)
     }
+
+    private func setUpForTest() {
+        avatarImageView.accessibilityIdentifier = GitHubRepositoryDetailTestIdentifier.avatarImageView.rawValue
+        titleLabel.accessibilityIdentifier = GitHubRepositoryDetailTestIdentifier.titleLabel.rawValue
+        languageLabel.accessibilityIdentifier = GitHubRepositoryDetailTestIdentifier.languageLabel.rawValue
+        starsCountLabel.accessibilityIdentifier = GitHubRepositoryDetailTestIdentifier.starsCountLabel.rawValue
+        watchersCountLabel.accessibilityIdentifier = GitHubRepositoryDetailTestIdentifier.watchersCountLabel.rawValue
+        forksCountLabel.accessibilityIdentifier = GitHubRepositoryDetailTestIdentifier.forksCountLabel.rawValue
+        issuesCountLabel.accessibilityIdentifier = GitHubRepositoryDetailTestIdentifier.issuesCountLabel.rawValue
+        safariNavigationButton.accessibilityIdentifier = GitHubRepositoryDetailTestIdentifier.safariNavigationButton.rawValue
+        safariNavigationBottomButton.accessibilityIdentifier = GitHubRepositoryDetailTestIdentifier.safariNavigationBottomButton.rawValue
+    }
 }
+
