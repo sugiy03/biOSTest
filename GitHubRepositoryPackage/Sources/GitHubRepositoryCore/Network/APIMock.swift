@@ -18,7 +18,7 @@ public final class APIMock: APIProtocol {
 
         let decoder = JSONDecoder()
         decoder.keyDecodingStrategy = .convertFromSnakeCase
-        // 今回はGitHubRepositoryModelしか使わないので、ForceTypeChangeしている
+        // Since only GitHubRepositoryModel is used this time, ForceTypeChange is used
         return try decoder.decode(GitHubRepositoryModel.self, from: data) as! R
     }
 }

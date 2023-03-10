@@ -19,7 +19,7 @@ let package = Package(
             name: "GitHubRepositoryCore",
             resources: [
                 .process("Resources/JsonFiles/search_repositories_200_response.json"),
-                // TODO: ディレクトリのコピーをできるようにする
+                // TODO: enable directory to copy
 //                 .copy("Resources")
             ]
         ),

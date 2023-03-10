@@ -5,7 +5,7 @@ import XCTest
 
 final class GitHubRepositoryPackageTests: XCTestCase {
     func testGitHubRepositoryDecode() throws {
-        // Bundle.moduleは、Pacakge.swiftのResourcesにファイルを登録しないと、エラーになる
+        // Bundle.module will cause an error if the file is not registered in Package.swift's Resources
         guard let url = GitHubRepositoryCore.bundleURL(fileName: "search_repositories_200_response", fileExtension: "json"),
               let data = try? Data(contentsOf: url)else {
             XCTFail("Can't load JSON file")
