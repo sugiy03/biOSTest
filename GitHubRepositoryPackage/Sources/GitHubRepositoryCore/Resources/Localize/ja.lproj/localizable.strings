@@ -1,0 +1,14 @@
+// GitHubRepositoryList
+"GitHubRepositoryListTitle"="リポジトリ検索";
+"GitHubRepositoryListSearchBarPlaceholder"="GitHubのリポジトリを検索できます！";
+"GitHubRepositoryListSearchNotDone"="キーワードを入力して、検索しましょう！";
+"GitHubRepositoryListSearchResultIsEmpty"="該当データがありません";
+
+// GitHubRepositoryDetail
+"GitHubRepositoryDetailTitle"="リポジトリ詳細";
+"GitHubRepositoryDetailButtonGitHubNavigation"="GitHubのページで確認";
+
+// Error
+"Errorunknown"="エラーが発生しました";
+"ErrorUnexpectedStatusCode"="%dは仕様にないステータスコードです";
+"ErrorInvalidRequestURL"="リクエストのURLが有効でありません";

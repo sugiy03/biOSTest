@@ -1,0 +1,14 @@
+/// GitHubRepositoryList
+"GitHubRepositoryListTitle"="Search Repository";
+"GitHubRepositoryListSearchBarPlaceholder"="You can search for GitHub repositories";
+"GitHubRepositoryListSearchNotDone"="Enter a keyword and search!";
+"GitHubRepositoryListSearchResultIsEmpty"="No data";
+
+/// GitHubRepositoryDetail
+"GitHubRepositoryDetailTitle"="Repository Detail";
+"GitHubRepositoryDetailButtonGitHubNavigation"="Check in GitHub page";
+
+// Error
+"ErrorUnknown"="An error has occurred";
+"ErrorUnexpectedStatusCode"="%d is unexpected status code";
+"ErrorInvalidRequestURL"="The request URL is not valid";
